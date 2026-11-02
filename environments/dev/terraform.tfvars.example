@@ -1,0 +1,14 @@
+project_name        = "cloudstack"
+location            = "eastus"
+owner               = "Kusum Vishwakarma"
+alert_email_address = "alerts@enterprise.local"
+db_admin_username   = "sqladminuser"
+db_admin_password   = "SuperP@ssw0rd2026!#Dev"
+
+tags = {
+  Environment = "dev"
+  Department  = "Cloud Operations"
+  CostCenter  = "104-DevOps"
+  Terraform   = "true"
+}
+

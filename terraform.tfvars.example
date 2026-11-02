@@ -1,0 +1,24 @@
+environment         = "dev"
+project_name        = "cloudstack"
+location            = "eastus"
+owner               = "Kusum Vishwakarma"
+alert_email_address = "alerts@enterprise.local"
+
+# Node & DB Configuration
+aks_node_vm_size    = "Standard_D2s_v5"
+aks_node_count      = 2
+aks_min_node_count  = 1
+aks_max_node_count  = 4
+
+db_admin_username   = "sqladminuser"
+db_admin_password   = "SuperP@ssw0rd2026!#Dev"
+db_sku_name         = "S1"
+db_max_size_gb      = 20
+
+tags = {
+  Environment = "dev"
+  ManagedBy   = "Terraform"
+  Repository  = "https://github.com/kusumvish7972/milkyinfo"
+  Architecture= "Hub-Spoke-ZeroTrust"
+}
+

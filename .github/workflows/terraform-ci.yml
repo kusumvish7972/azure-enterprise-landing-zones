@@ -1,0 +1,61 @@
+name: "Terraform CI & Security Gate"
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    name: "Validate & Format Check"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.8.5
+
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive
+
+      - name: Validate Dev Environment
+        run: |
+          cd environments/dev
+          terraform init -backend=false
+          terraform validate
+
+      - name: Validate UAT Environment
+        run: |
+          cd environments/uat
+          terraform init -backend=false
+          terraform validate
+
+      - name: Validate Prod Environment
+        run: |
+          cd environments/prod
+          terraform init -backend=false
+          terraform validate
+
+  security-scan:
+    name: "Security, SAST & Compliance"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run tfsec Security Scanner
+        uses: aquasecurity/tfsec-action@v1.0.3
+        with:
+          soft_fail: true
+
+      - name: Run Checkov Compliance Scan
+        uses: bridgecrewio/checkov-action@master
+        with:
+          framework: terraform
+          soft_fail: true
+          output_format: cli
+

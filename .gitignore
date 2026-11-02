@@ -1,0 +1,49 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude sensitive tfvars files (allow *.example.tfvars)
+*.tfvars
+*.tfvars.json
+!*.example.tfvars
+!*.auto.tfvars
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration files
+.terraformrc
+terraform.rc
+
+# Infracost & Checkov outputs
+.infracost/
+infracost-*.json
+checkov-report.xml
+
+# Editor & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Plan files
+*.tfplan
+*.binary
+
+
+# Ignore local automation scripts
+scripts/*.ps1
