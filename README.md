@@ -2,11 +2,11 @@
 
 <!-- TOP PROFILE & ARCHITECTURAL LOGO -->
 <a href="#-executive-summary--digital-resume">
-  <img src="./assets/kv_logo.svg" width="135" height="135" alt="KV Monogram Logo" />
+  <img src="https://raw.githubusercontent.com/kusumvish7972/milkyinfo/main/assets/kv_logo.svg" width="135" height="135" alt="KV Monogram Logo" />
 </a>
 
 <!-- EXECUTIVE CORPORATE NETWORK BANNER -->
-<img src="./assets/kv_banner.svg" width="100%" alt="KV Enterprise Cloud Architecture Network Banner" />
+<img src="https://raw.githubusercontent.com/kusumvish7972/milkyinfo/main/assets/kv_banner.svg" width="100%" alt="KV Enterprise Cloud Architecture Network Banner" />
 
 <br/><br/>
 
